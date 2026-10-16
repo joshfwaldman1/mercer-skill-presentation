@@ -59,6 +59,9 @@ a { color: var(--accent); font-weight: 600; }
 .student { font-style: italic; }
 .reply { border-left: 3px solid var(--accent); padding-left: 0.7em; }
 .examples { display: grid; gap: 0.8vw; }
+.ex.five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 1000px) { .ex.five { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .ex.five { grid-template-columns: 1fr; } }
 @media (max-width: 1000px) { .ex { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .ex { grid-template-columns: 1fr; } }
 </style>
@@ -73,6 +76,75 @@ a { color: var(--accent); font-weight: 600; }
   </div>
   <div class="who">Josh Waldman<br>October 16, 2026</div>
 </header>
+
+<div class="examples">
+  <div class="ex-head">
+    <h2>Found by the skill</h2>
+    <p>Facts and connections that came out of the test runs. Each is checked against the record.</p>
+  </div>
+  <div class="ex five">
+    <div class="card">
+      <div class="n">The outside review has a gap</div>
+      <p>The Board fired him for poor care <b>and</b> “record keeping deficiencies.” The outside reviewer only rated care. It says nothing about records or the H&amp;P.</p>
+      <p class="src">R1/05 Board Letter p.1, R2/Summary p.5</p>
+    </div>
+    <div class="card">
+      <div class="n">The real test is timing</div>
+      <p>If anyone raised care concerns before Dec 12, the “built after the fact” story fails. Packet 23 says an issue was raised with Mercer “before.” When is open.</p>
+      <p class="src">R2/Summary p.4, R2/Venn Letter p.1</p>
+    </div>
+    <div class="card">
+      <div class="n">“Career back” is four goals</div>
+      <p>Get privileges back, clean up the NPDB report, beat OPMC, or work as a locum again soon. Each one points to a different forum and a different first step.</p>
+      <p class="src">R1/05 Emails Jan 22–23, R1/00 Intake §IV [M]</p>
+    </div>
+    <div class="card">
+      <div class="n">A one-day gap that hurts</div>
+      <p class="tag">HYPOTHETICAL</p>
+      <p>The exit offer lapsed Feb 23. A request on Feb 24 lets the hospital say he asked for a hearing only once the deal died.</p>
+      <p class="src">R1/05 Draft Separation ¶6, 21 days from Feb 2</p>
+    </div>
+    <div class="card">
+      <div class="n">A possible rescue</div>
+      <p class="tag">HYPOTHETICAL</p>
+      <p>The 30 days may run from the certified letter, not the email. Jan 25 was a Sunday. Delivery on Jan 26 or later makes Feb 24 on time.</p>
+      <p class="src">Bylaws VIII §2.a–b p.28</p>
+    </div>
+  </div>
+
+  <div class="ex-head" style="margin-top:0.6vw">
+    <h2>The skills in practice</h2>
+    <p>What goes in and what comes out. Quoted from the test transcripts. The student answers were scripted.</p>
+  </div>
+  <div class="ex">
+    <div class="card">
+      <div class="n">Tutor: pushes back</div>
+      <div class="say">Student</div>
+      <p class="student">“The ICRO report is the evidence that distinguishes them, because it says standard of care met.”</p>
+      <div class="say skill">Skill</div>
+      <p class="reply">“Part of that holds… But it doesn’t distinguish the theories… Both theories already predict it.” Then: “What fact would Theory 1 and Theory 2 predict differently?”</p>
+    </div>
+    <div class="card">
+      <div class="n">Tutor: won’t make your call</div>
+      <div class="say skill">Skill</div>
+      <p class="reply">“Whether to serve a protective notice of claim is a lawyer’s judgment, and I’m not going to make it for you. But it shouldn’t wait for us to finish the map.”</p>
+    </div>
+    <div class="card">
+      <div class="n">Tutor: traces a change</div>
+      <div class="say">Student</div>
+      <p class="student">“Probably just the hearing date math.”</p>
+      <div class="say skill">Skill</div>
+      <p class="reply">“You’re right that the date math moves. But that is the smallest of the three defects.”</p>
+    </div>
+    <div class="card">
+      <div class="n">citation-check: flags and fixes</div>
+      <div class="say">Flagged line</div>
+      <p class="student">“If there is no hearing date and no serious negotiation, file the protective Article 78 by 5/21 and seek a stay.”</p>
+      <div class="say skill">Fixed</div>
+      <p class="reply">“…file the protective Article 78 by 5/21 (CPLR 217(1), four months from the Jan 21 action; 02 Clocks).”</p>
+    </div>
+  </div>
+</div>
 
 <div class="grid">
 
@@ -156,45 +228,6 @@ a { color: var(--accent); font-weight: 600; }
     <p class="src">A lawyer still makes each call.</p>
   </div>
 
-</div>
-
-<div class="examples">
-  <div class="ex-head">
-    <h2>How the skill works: four real exchanges</h2>
-    <p>Quoted from the test transcripts. The student answers were scripted for the tests.</p>
-  </div>
-  <div class="ex">
-    <div class="card">
-      <div class="n">It pushes back on a weak answer</div>
-      <div class="say">Student</div>
-      <p class="student">“The ICRO report is the evidence that distinguishes them, because it says standard of care met.”</p>
-      <div class="say skill">Skill</div>
-      <p class="reply">“Part of that holds… But it doesn’t distinguish the theories… Both theories already predict it.” Then it asks: “What fact would Theory 1 and Theory 2 predict differently?”</p>
-      <p class="src">Strategy test, turn 5</p>
-    </div>
-    <div class="card">
-      <div class="n">It won’t guess the client’s goal</div>
-      <div class="say">Student</div>
-      <p class="student">“I don’t know what he wants beyond getting his career back.”</p>
-      <div class="say skill">Skill</div>
-      <p class="reply">“That’s an honest answer, and a useful one… It can mean at least four different things, and they pull toward different strategies.”</p>
-      <p class="src">Strategy test, turn 3</p>
-    </div>
-    <div class="card">
-      <div class="n">It leaves the lawyer’s call to you</div>
-      <div class="say skill">Skill</div>
-      <p class="reply">“Whether to serve a protective notice of claim is a lawyer’s judgment, and I’m not going to make it for you. But it shouldn’t wait for us to finish the map.”</p>
-      <p class="src">Understanding test</p>
-    </div>
-    <div class="card">
-      <div class="n">It finds what a change really affects</div>
-      <div class="say">Student</div>
-      <p class="student">“Probably just the hearing date math.”</p>
-      <div class="say skill">Skill</div>
-      <p class="reply">“You’re right that the date math moves. But that is the smallest of the three defects.”</p>
-      <p class="src">Revision test, turn 2</p>
-    </div>
-  </div>
 </div>
 
 <footer>
