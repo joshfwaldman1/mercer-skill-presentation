@@ -31,7 +31,7 @@ Two more rules:
 - It skips headings, label definitions, short field values, and **every table row**. Check tables by hand until the script covers them.
 
 ## Steps
-1. Run `python3 -I ~/.claude/skills/citation-check/scripts/check_citations.py <notebook_dir>/*.md`.
+1. Run the script bundled in this skill folder: `python3 -I <this skill folder>/scripts/check_citations.py <notebook_dir>/*.md`. If you can't run code, apply the rule above by hand, line by line.
 2. For each flagged line, add the cite from the source, or label it INFERRED (with the reasoning) or OPEN (with what would establish it).
 3. Re-run until it reports 0 flagged lines.
 4. Read the tables and spot-check the cites behind the recommendation. The script can't do either.

@@ -59,10 +59,12 @@ code { font-size: 15px; background: var(--panel); border: 1px solid var(--rule);
 
 <header>
   <h1>Case Strategy Tutor</h1>
-  <p class="lede">A Claude skill for working through a legal case file. Mercer is the first case. Josh Waldman, October 16, 2026.</p>
+  <p class="lede">Two Claude skills for working through a legal case file. The tutor builds the analysis with the student. citation-check audits it. Mercer is the first case. Josh Waldman, October 16, 2026.</p>
   <div class="links">
     <a href="case-strategy-tutor/SKILL.md">Read SKILL.md</a>
-    <a href="case-strategy-tutor.zip">Download the skill (.zip)</a>
+    <a href="case-strategy-tutor.zip">Download case-strategy-tutor (.zip)</a>
+    <a href="citation-check/SKILL.md">Read citation-check</a>
+    <a href="citation-check.zip">Download citation-check (.zip)</a>
     <a href="working-docs/mercer_overview_v1.md">Case overview</a>
     <a href="working-docs/mercer_strategy_v1.md">Strategy</a>
     <a href="test-results/benchmark.md">Test results</a>
@@ -142,7 +144,20 @@ code { font-size: 15px; background: var(--panel); border: 1px solid var(--rule);
     </ol>
     <p style="font-family:var(--body);font-size:18px;font-weight:400">Never invent a page number. If you can’t find the source, it is OPEN.</p>
   </div>
-  <p>The separate <a href="citation-check/SKILL.md">citation-check</a> skill runs this rule as a script. My Oct 14 notebook passes with 0 uncited lines. The script checks that a cite exists. It does not check that the cite is right, and it skips table rows. Those still need a person.</p>
+</section>
+
+<section id="citation-check">
+  <div class="label">Second skill</div>
+  <h2>citation-check</h2>
+  <p>The tutor builds the analysis with the student. citation-check audits the result before anyone relies on it.</p>
+  <p>It enforces the citation rule above. A script reads each Markdown file and flags any factual line with no record cite, no legal cite and no label. You fix each flagged line and run it again until it reports zero.</p>
+  <div class="wrap"><table>
+    <tr><th>File checked</th><th>Result</th></tr>
+    <tr><td>My Oct 14 trial notebook, 7 files</td><td>0 uncited lines</td></tr>
+    <tr><td>The Mercer working documents from the tutor</td><td>17 lines flagged</td></tr>
+  </table></div>
+  <p style="margin-top:16px"><b>What it can’t do.</b> It checks that a cite exists. It doesn’t check that the cite is right. It also skips table rows, and most of the working documents are tables. A person still has to open the sources behind the recommendation.</p>
+  <p>To install it, upload <a href="citation-check.zip">citation-check.zip</a> the same way as the tutor. The script runs in claude.ai when code execution is on. Without code execution, it applies the rule by hand.</p>
 </section>
 
 <section id="demo">
