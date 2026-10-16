@@ -1,0 +1,60 @@
+{
+  "skill_name": "case-strategy-tutor",
+  "evals": [
+    {
+      "id": 1,
+      "name": "understanding-first-session",
+      "prompt": "Use my case-strategy-tutor skill to help me develop an integrated understanding and strategy for Mercer. Begin by checking the available sources and asking me about my current understanding. Guide me through the workflow and keep me involved in the important judgments.\n\n[TEST HARNESS: you cannot receive live replies. The simulated student's answers to your opening questions are below. Use them, then carry the session through Stage 0 and Stage 1 and stop at your Checkpoint 1 question. The client is Dr. Mercer; the problem is set as of April 16, 2026; keep the class pseudonyms; the underlying peer-review packets are off-limits except through the Avery Summary memo.]\nSIMULATED STUDENT: 'I think Mercer got fired because of the nurses' complaint and the fake H&P, and the hospital cut corners. I think he should go to the hearing and win. I'm confused about why there are two suspension letters and what the NPDB thing means for him. I'd need to know whether he actually saw the patient.'",
+      "expected_output": "Source inventory distinguishing read/listed/scans; baseline recorded; first map of actors (multiple roles), chronology with source vs dispute status, procedural position with clocks; flags 12/16 vs 12/19; ends with a checkpoint question rather than a full memo.",
+      "assertions": [
+        "Source inventory separates files read from files only listed and names the text-less scans",
+        "Records the student's baseline answers (verbatim or near-verbatim) before giving its own analysis",
+        "Treats the student's 'should go to the hearing and win' as something to test, not as settled",
+        "Flags that the 12/16 MEC letter date conflicts with the 12/19 date in later hospital documents and connects it to a Bylaws clock",
+        "Chronology or map distinguishes source status from dispute status, or marks Mercer-only [M] facts",
+        "Flags at least two actors with multiple roles (e.g., Calder, Baxter, Whitcomb, Keene, Venn)",
+        "Does not state as fact that Mercer received a pre-suspension hearing or was 'afforded applicable rights'",
+        "Material factual claims carry locators (R1/.. or R2/.. or Bylaws section)",
+        "Ends at a checkpoint that asks the student to explain a connection in their own words (not just 'any questions?')",
+        "Connects the student's question about whether Mercer saw the patient to strategy (e.g., credibility, OPMC exposure, fraud vs documentation)"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "integrated-strategy",
+      "prompt": "Use my case-strategy-tutor skill on Mercer. We already did the map in an earlier session (I don't have the saved docs). Today I want competing case theories and a recommended strategy with a sequence of next steps.\n\n[TEST HARNESS: no live replies. Problem is as of April 16, 2026. When you reach the distinguishing-evidence checkpoint, the simulated student answers: 'The ICRO report is the evidence that distinguishes them, because it says standard of care met.' When asked about objectives, the simulated student says: 'I don't know what he wants beyond getting his career back.' Use those answers and continue through to a recommendation and sequence, saving the strategy as a working document in your response.]",
+      "expected_output": "Two or more theories with dangerous facts; pushes back on ICRO as distinguishing evidence; ties distinguishing evidence to path and next step; options with opposing responses; recommendation vs strongest alternative; dated sequence incl. 4/23 and 5/21 clocks; uncertainty; objectives labeled provisional.",
+      "assertions": [
+        "Develops at least two competing case theories, each with its most dangerous fact",
+        "Pushes back on the student's claim that ICRO is the distinguishing evidence (e.g., only 2 charts; both theories can account for it)",
+        "Names distinguishing evidence tied to the 10/31-11/3 H&P facts, billing/refund, badge/video, or what the Board saw, and links it to a path and a concrete next step",
+        "Labels the client's objectives as provisional/unconfirmed rather than inventing preferences",
+        "Lists at least three strategic paths with costs/risks and an opposing response for each",
+        "States a recommendation and explains why it beats the strongest named alternative",
+        "Sequence includes time-sensitive dates as of 4/16/2026 (4/23 notice of claim and/or 5/21 Article 78)",
+        "Identifies cross-forum risk: Mercer's hearing statements or testimony can reach OPMC / billing exposure",
+        "Includes what would change the recommendation and how it would be learned",
+        "Distinguishes verified from unverified legal authorities or puts unverified ones on a research list",
+        "Outputs the strategy as a saveable working document and tells the student to save/supply it next time"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "revision-after-removed-assumption",
+      "prompt": "Use my case-strategy-tutor skill. Here are my saved Mercer working documents from last session plus the case notebook. HYPOTHETICAL TEST CONDITION (not a case fact): prior counsel's file shows the hearing request was sent by ordinary email to Mara Whitcomb on February 24, 2026, with no certified mail or courier receipt. Revise our analysis and strategy.\n\n[TEST HARNESS: no live replies. If you ask the student which parts they expect to be affected, the simulated student answers: 'Probably just the hearing date math.' Continue and produce the revised strategy.]",
+      "expected_output": "Labels the change HYPOTHETICAL; identifies assumption A1 failing; flags Bylaws VIII \u00a72.b waiver (30 days, to CEO, receipted); addresses arguments (certified-mail receipt date, Whitcomb not CEO); corrects student's narrow answer; traces effects across docs; states whether recommendation changes; shifts weight toward protective filings/\u00a72801-b/\u00a71983/negotiation; adds change-log row; keeps hypothetical separate from record.",
+      "assertions": [
+        "Labels the change as HYPOTHETICAL and keeps it out of the record-fact columns",
+        "Identifies that working assumption A1 fails",
+        "Applies Bylaws VIII \u00a72.b: 30 days, in writing, to the CEO, by receipted delivery, and notes the waiver risk",
+        "Notes that 2/24 is after the 2/20 email-receipt deadline but analyzes the certified-mail receipt start date as a possible rescue",
+        "Notes that Whitcomb is not the CEO (Baxter/Calder) as a separate defect",
+        "Corrects the simulated student's narrow answer ('just the date math') by showing wider effects",
+        "Traces effects across theories/options/sequence, not only the clock",
+        "States plainly whether the recommendation holds, changes, or is uncertain",
+        "Shifts weight toward protective routes (Article 78 / \u00a72801-b / \u00a71983 / negotiation) or explains why not",
+        "Adds a change-log entry and outputs new versioned documents"
+      ]
+    }
+  ]
+}
