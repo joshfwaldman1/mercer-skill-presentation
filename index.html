@@ -61,6 +61,16 @@ a { color: var(--accent); font-weight: 600; }
   .arc { grid-template-columns: 1fr; }
   .q { grid-template-columns: 1fr; } .q .ask { border-right: 0; border-bottom: 1px solid var(--rule); }
 }
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.sk { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.sk h3 { font-family: var(--display); font-size: 22px; margin: 0; }
+.sk .what { font-size: 17px; font-weight: 600; margin: 0; }
+.sk dl { margin: 0; display: grid; gap: 8px; font-size: 15px; }
+.sk dt { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; color: var(--soft); }
+.sk dd { margin: 0; }
+.sk .dl { margin-top: auto; font-size: 15px; }
+.flow { font-size: 16px; color: var(--soft); margin-top: 14px; }
+@media (max-width: 760px) { .skills { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -101,6 +111,7 @@ a { color: var(--accent); font-weight: 600; }
 <section>
   <div class="label">How the skill questioned it</div>
   <h2>Five questions, and what the record answered</h2>
+  <p>These are the questions the claims-counterclaims skill asks.</p>
 
   <div class="q">
     <div class="ask"><div class="who">Skill asks</div><p>What evidence shows a motive?</p></div>
@@ -183,11 +194,45 @@ a { color: var(--accent); font-weight: 600; }
 
 <section>
   <div class="label">The skills</div>
-  <div class="links">
+  <h2>Three skills, one job each</h2>
+  <div class="skills">
+    <div class="sk">
+      <h3>case-strategy-tutor</h3>
+      <p class="what">Teaches you a case file and helps you build a strategy you can defend.</p>
+      <dl>
+        <dt>You give it</dt><dd>The case files, who the client is, the date, and what the client wants.</dd>
+        <dt>It does</dt><dd>Walks you through the case in seven steps. Asks you to explain at each step. Cites every fact. Argues the other side.</dd>
+        <dt>You get</dt><dd>A case overview, an evidence map and a strategy. You bring them back next time.</dd>
+        <dt>Use it</dt><dd>When you start a case or prepare for a hearing.</dd>
+      </dl>
+      <div class="dl"><a href="case-strategy-tutor/SKILL.md">Read it</a> &nbsp; <a href="case-strategy-tutor.zip">Download</a></div>
+    </div>
+    <div class="sk">
+      <h3>claims-counterclaims</h3>
+      <p class="what">Tests one theory against the record and the other side’s best answer.</p>
+      <dl>
+        <dt>You give it</dt><dd>One claim in a sentence, the standard the forum applies, and the case files.</dd>
+        <dt>It does</dt><dd>Asks the five questions above. Builds the other side’s strongest account. Finds the fact that would decide between them.</dd>
+        <dt>You get</dt><dd>A verdict to keep, revise or drop the claim, and a side-by-side table.</dd>
+        <dt>Use it</dt><dd>When you like a theory and need to know if it holds. It turned pretext into overreaction.</dd>
+      </dl>
+      <div class="dl"><a href="claims-counterclaims/SKILL.md">Read it</a> &nbsp; <a href="claims-counterclaims.zip">Download</a> &nbsp; <a href="claims-counterclaims-test/pretext-run.md">See it run</a></div>
+    </div>
+    <div class="sk">
+      <h3>citation-check</h3>
+      <p class="what">Makes sure every fact in your notes says where it came from.</p>
+      <dl>
+        <dt>You give it</dt><dd>Your case notes in Markdown.</dd>
+        <dt>It does</dt><dd>Flags every factual line with no record cite, no legal cite and no label (VERIFIED, INFERRED, OPEN, or [M] for the client’s word).</dd>
+        <dt>You get</dt><dd>A list of lines to fix. You rerun it until it finds none.</dd>
+        <dt>Use it</dt><dd>Before you hand in your notes or rely on them.</dd>
+      </dl>
+      <div class="dl"><a href="citation-check/SKILL.md">Read it</a> &nbsp; <a href="citation-check.zip">Download</a></div>
+    </div>
+  </div>
+  <p class="flow">How they fit: the tutor builds the case. claims-counterclaims tests a theory. citation-check audits the notes.</p>
+  <div class="links" style="margin-top:14px">
     <a href="https://claude.ai/artifact/2SWNFc51aRNVRinvjdkBYh">Try the tutor live</a>
-    <a href="case-strategy-tutor/SKILL.md">case-strategy-tutor SKILL.md</a>
-    <a href="case-strategy-tutor.zip">Download the tutor</a>
-    <a href="citation-check.zip">Download citation-check</a>
     <a href="overview.html">Project overview</a>
     <a href="details.html">Full write-up</a>
   </div>
