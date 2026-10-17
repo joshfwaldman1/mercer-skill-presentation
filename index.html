@@ -73,6 +73,12 @@ a { color: var(--accent); font-weight: 600; }
 @media (max-width: 760px) { .skills { grid-template-columns: 1fr; } }
 .unknowns { margin: 0; padding-left: 24px; }
 .unknowns li { margin-bottom: 6px; }
+.found { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.fd { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 18px; min-width: 0; }
+.fd h3 { font-family: var(--display); font-size: 21px; margin: 2px 0 10px; }
+.fd p { font-size: 16px; margin: 0 0 8px; }
+.fd .hit { font-weight: 600; color: var(--warn); }
+@media (max-width: 700px) { .found { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -192,6 +198,29 @@ a { color: var(--accent); font-weight: 600; }
   <h2>Two facts could flip it</h2>
   <p><b>If Mercer never saw the patient and the bill was never refunded,</b> the H&amp;P becomes fraud exposure. Then a quiet negotiated exit beats a hearing.</p>
   <p><b>If the hearing request was late,</b> the hearing may be gone. Then the fight moves to court and to negotiation.</p>
+</section>
+
+<section>
+  <div class="label">What the checks found</div>
+  <h2>What the tools caught</h2>
+  <div class="found">
+    <div class="fd">
+      <div class="label">citation-check, on my working documents</div>
+      <h3>Rules and inferences stated as facts</h3>
+      <p>“File the protective Article 78 by 5/21” had no rule behind it. Fix: CPLR 217(1), four months from Jan 21.</p>
+      <p>“The 4/23 notice of claim” had no rule behind it. Fix: GML §50-e.</p>
+      <p>“If he never examined her, it’s fraud exposure” read as fact. It is my inference. Fix: label it INFERRED and cite R2/Notes p.1.</p>
+      <p class="src">My Oct 14 notebook: 0 flags. Today’s working documents: 17 flags, 6 of them real.</p>
+    </div>
+    <div class="fd">
+      <div class="label">Testing the tutor</div>
+      <h3>Testing caught a premise nobody checked</h3>
+      <p>One plan assumed we could negotiate the NPDB report away.</p>
+      <p>The NPDB Guidebook says only a vacated suspension voids the report. Resigning first is itself reportable.</p>
+      <p class="hit">The ask changed. Vacate the suspension. Never resign first.</p>
+      <p class="src">citation-check couldn’t catch this. The line was labeled “research needed,” and a labeled line passes.</p>
+    </div>
+  </div>
 </section>
 
 <section>
